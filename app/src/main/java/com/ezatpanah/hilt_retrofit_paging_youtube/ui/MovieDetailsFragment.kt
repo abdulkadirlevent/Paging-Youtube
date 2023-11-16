@@ -25,10 +25,7 @@ class MovieDetailsFragment : Fragment() {
 
     val TAG = "MovieDetailsFragment"
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?,
-    ): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentMovieDetailesBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
@@ -47,12 +44,13 @@ class MovieDetailsFragment : Fragment() {
 
             viewModel.detailsMovie.observe(viewLifecycleOwner) { response ->
                 val moviePosterURL = POSTER_BASE_URL + response.posterPath
+                val moviePosterBackURL = POSTER_BASE_URL + response.backdropPath
                 imgMovie.load(moviePosterURL) {
                     crossfade(true)
                     placeholder(R.drawable.poster_placeholder)
                     scale(Scale.FILL)
                 }
-                imgMovieBack.load(moviePosterURL) {
+                imgMovieBack.load(moviePosterBackURL) {
                     crossfade(true)
                     placeholder(R.drawable.poster_placeholder)
                     scale(Scale.FILL)

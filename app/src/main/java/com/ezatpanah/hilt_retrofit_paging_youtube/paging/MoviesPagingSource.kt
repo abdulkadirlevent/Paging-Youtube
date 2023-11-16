@@ -2,12 +2,12 @@ package com.ezatpanah.hilt_retrofit_paging_youtube.paging
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import com.ezatpanah.hilt_retrofit_paging_youtube.repository.ApiRepository
-import com.ezatpanah.hilt_retrofit_paging_youtube.response.MoviesListResponse
+import com.ezatpanah.hilt_retrofit_paging_youtube.api.ApiRepository
+import com.ezatpanah.hilt_retrofit_paging_youtube.models.MoviesListResponse
 import retrofit2.HttpException
 
 class MoviesPagingSource(
-    private val repository: ApiRepository ,
+    private val repository: ApiRepository,
 ) : PagingSource<Int, MoviesListResponse.Result>() {
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, MoviesListResponse.Result> {

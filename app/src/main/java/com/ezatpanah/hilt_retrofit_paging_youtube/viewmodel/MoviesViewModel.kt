@@ -7,8 +7,8 @@ import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.cachedIn
 import com.ezatpanah.hilt_retrofit_paging_youtube.paging.MoviesPagingSource
-import com.ezatpanah.hilt_retrofit_paging_youtube.repository.ApiRepository
-import com.ezatpanah.hilt_retrofit_paging_youtube.response.MovieDetailsResponse
+import com.ezatpanah.hilt_retrofit_paging_youtube.api.ApiRepository
+import com.ezatpanah.hilt_retrofit_paging_youtube.models.MovieDetailsResponse
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -22,15 +22,19 @@ class MoviesViewModel @Inject constructor(private val repository: ApiRepository)
         MoviesPagingSource(repository)
     }.flow.cachedIn(viewModelScope)
 
-
     //Api
     val detailsMovie = MutableLiveData<MovieDetailsResponse>()
+
     fun loadDetailsMovie(id: Int) = viewModelScope.launch {
+
         loading.postValue(true)
+
         val response = repository.getMovieDetails(id)
+
         if (response.isSuccessful) {
             detailsMovie.postValue(response.body())
         }
+
         loading.postValue(false)
     }
 }

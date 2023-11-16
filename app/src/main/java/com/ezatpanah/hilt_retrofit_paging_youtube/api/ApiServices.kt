@@ -1,7 +1,7 @@
 package com.ezatpanah.hilt_retrofit_paging_youtube.api
 
-import com.ezatpanah.hilt_retrofit_paging_youtube.response.MovieDetailsResponse
-import com.ezatpanah.hilt_retrofit_paging_youtube.response.MoviesListResponse
+import com.ezatpanah.hilt_retrofit_paging_youtube.models.MovieDetailsResponse
+import com.ezatpanah.hilt_retrofit_paging_youtube.models.MoviesListResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -17,9 +17,7 @@ interface ApiServices {
     suspend fun getPopularMoviesList(@Query("page") page: Int): Response<MoviesListResponse>
 
     @GET("movie/{movie_id}")
-    suspend
-
-    fun getMovieDetails(@Path("movie_id") id: Int): Response<MovieDetailsResponse>
+    suspend fun getMovieDetails(@Path("movie_id") id: Int): Response<MovieDetailsResponse>
 
 
 

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_item_example"
+        android:title="Example"
+        android:icon="@drawable/ic_round_date_range_24" />
+
+    <item
+        android:id="@+id/nav_projects"
+        android:title="Projeler" />
+
+    <item
+        android:id="@+id/nav_installations"
+        android:title="Tesisatlar" />
+
+    <item
+        android:id="@+id/nav_users"
+        android:title="Kullanıcılar" />
+
+    <item
+        android:id="@+id/nav_accounts"
+        android:title="Hesaplar" />
+
+    <item
+        android:id="@+id/nav_notifications"
+        android:title="Bildirimler" />
+
+    <item
+        android:id="@+id/nav_overtimes"
+        android:title="Mesailer" />
+
+    <item
+        android:id="@+id/nav_permits"
+        android:title="İzinler" />
+
+    <item
+        android:id="@+id/nav_expenses"
+        android:title="Masraflar" />
+
+</menu>

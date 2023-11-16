@@ -1,6 +1,5 @@
-package com.ezatpanah.hilt_retrofit_paging_youtube.repository
+package com.ezatpanah.hilt_retrofit_paging_youtube.api
 
-import com.ezatpanah.hilt_retrofit_paging_youtube.api.ApiServices
 import javax.inject.Inject
 
 class ApiRepository @Inject constructor(

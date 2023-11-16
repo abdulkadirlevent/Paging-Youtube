@@ -12,7 +12,7 @@ import coil.load
 import coil.size.Scale
 import com.ezatpanah.hilt_retrofit_paging_youtube.R
 import com.ezatpanah.hilt_retrofit_paging_youtube.databinding.ItemMoviesBinding
-import com.ezatpanah.hilt_retrofit_paging_youtube.response.MoviesListResponse
+import com.ezatpanah.hilt_retrofit_paging_youtube.models.MoviesListResponse
 import com.ezatpanah.hilt_retrofit_paging_youtube.utils.POSTER_BASE_URL
 import javax.inject.Inject
 
